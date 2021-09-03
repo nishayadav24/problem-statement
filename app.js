@@ -4,7 +4,7 @@ const url = 'mongodb://localhost/problem'
 
 const app = express()
 
-mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true,useCreateIndex :true})
 const con = mongoose.connection
 
 con.on('open', () => {

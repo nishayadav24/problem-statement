@@ -38,17 +38,10 @@ router.post('/create', async (req, res) => {
 router.put('/update/:id', async (req, res) => {
     try {
         const app = await problem.findById(req.params.id)
-        app.name = req.body.name,
+           app.name = req.body.name,
             app.minimum = req.body.minimum,
             app.delFee = req.body.delFee,
-            app.status = req.body.status,
-            app.location = {
-                type: req.body.type,
-                coordinates: [
-                    req.body.lat,
-                    req.body.long,
-                ]
-            }
+            app.status = req.body.status
         const a1 = await app.save()
         res.json(a1)
     } catch (err) {
